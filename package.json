@@ -1,0 +1,55 @@
+{
+	"name": "vscode-open-in-sublime-text",
+	"displayName": "Open in Sublime Text",
+	"description": "Open project in Sublime Text",
+	"repository": "garytee/vscode-open-in-sublime-text",
+	"icon": "1024x1024.png",
+	"version": "0.6.0",
+	"publisher": "garytee",
+	"engines": {
+		"vscode": "^1.16.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:openInSublimeText.open"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "openInSublimeText.open",
+				"title": "Open in Sublime Text"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "openInSublimeText.open"
+				}
+			],
+			"editor/title/context": [
+				{
+					"command": "openInSublimeText.open"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^7.0.0",
+		"eslint": "^4.6.1",
+		"mocha": "^3.5.0",
+		"typescript": "^2.5.2",
+		"vscode": "^1.1.5"
+	},
+	"dependencies": {
+		"find-root": "^1.1.0",
+		"opn": "^5.3.0"
+	}
+}

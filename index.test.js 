@@ -1,0 +1,4 @@
+module.exports.run = () => new Promise((resolve) => {
+  // The error can be reproduced more consistently if test runs take longer
+  setTimeout(resolve, 10_000)
+})
